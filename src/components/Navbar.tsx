@@ -19,7 +19,7 @@ const menuLinks = [
 
 export default function Navbar() {
   return (
-    <NavigationMenu className="max-w-full w-full border-b-2 px-14 justify-start backdrop-blur-sm"> 
+    <NavigationMenu className="max-w-full w-full border-b-2 px-4 justify-start backdrop-blur-sm"> 
         <NavigationMenuList className="p-2">
                 {
                   menuLinks.map((menuLink) => (

@@ -13,14 +13,14 @@ function App() {
     <>
         <BrowserRouter>
           <Navbar />
-            <div className="container mx-auto">
+            <div className="container mx-auto py-10 px-16">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
               </Routes>
             </div>
+          <Footer />
         </BrowserRouter>
-      <Footer />
     </>
   );
 }

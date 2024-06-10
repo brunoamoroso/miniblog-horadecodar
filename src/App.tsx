@@ -1,12 +1,21 @@
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+
+//pages
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
 
 function App() {
-
   return (
-    <div className="container mx-auto">
-      <h1>Miniblog</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <div className="container mx-auto">
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </div>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

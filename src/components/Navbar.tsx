@@ -1,6 +1,5 @@
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -19,7 +18,7 @@ const menuLinks = [
 
 export default function Navbar() {
   return (
-    <NavigationMenu className="max-w-full w-full border-b-2 px-4 justify-start backdrop-blur-sm"> 
+    <NavigationMenu className="sticky max-w-full w-full border-b-2 px-4 justify-start backdrop-blur-sm"> 
         <NavigationMenuList className="p-2">
                 {
                   menuLinks.map((menuLink) => (

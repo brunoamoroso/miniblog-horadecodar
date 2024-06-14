@@ -4,6 +4,7 @@ import { cva } from "class-variance-authority"
 import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { NavLink } from "react-router-dom"
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -77,7 +78,18 @@ const NavigationMenuContent = React.forwardRef<
 ))
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
-const NavigationMenuLink = NavigationMenuPrimitive.Link
+
+// const NavigationMenuLink = NavigationMenuPrimitive.Link
+const NavigationMenuLink = ({to, children, ...props} : {to: string, children: React.ReactNode})=> {
+  const enabledState = 'flex text-sm font-bold py-3 px-5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-sm transition-all';
+  const activeState = 'flex text-sm font-bold py-3 px-5 text-slate-900 hover:text-slate-900 hover:bg-slate-100 rounded-sm transition-all';
+
+  return (
+    <NavLink to={to} className={({isActive}) => isActive ? activeState : enabledState} {...props}>
+        {children}
+    </NavLink>
+  )
+}
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
